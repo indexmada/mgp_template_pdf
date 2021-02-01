@@ -25,6 +25,8 @@
     'data': [
         'views/sale_order.xml',
         'views/account_move.xml',
+        'report/invoice_report.xml',
+        'report/order_report.xml',
     ],
 
 }
