@@ -38,16 +38,17 @@ class ResPartner(models.Model):
 class StockQuant(models.Model):
     _inherit = 'stock.quant'
     
-    x_brand = fields.Char(string='Brand')
+    x_brand = fields.Char(string='Marque')
 
 
 #--------HERITAGE DU MODELE PRODUCT TEMPLATE ICI------------------------ #
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    x_brand = fields.Many2one('my_brand.brand', string='Brand')
+    x_brand = fields.Many2one('my_brand.brand', string='Marque')
+    x_brand_id = fields.Many2one('my_brand.brand', string='Marque', index=True, group_expand='_group_expand_brand')
 
-    x_brand_id = fields.Many2one('my_brand.brand', string='Brand', index=True, group_expand='_group_expand_brand')
+    
 
     @api.model
     def _group_expand_brand(self, brands, order):

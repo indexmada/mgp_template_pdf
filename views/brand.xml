@@ -33,7 +33,7 @@
         </record>
 
 
-        <!-- Afficher à la vue KANBAN brand dans search view -->
+        <!-- Afficher à la vue KANBAN de PRODUCT TEMPLATE brand dans search view -->
 
 <record id="product_template_kanban_view_custom" model="ir.ui.view">
     <field name="name">product.template.kanban.view.custom</field>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="o_kanban_details">
                             <div class="o_kanban_brand_id">
-                                <field name="x_brand" string="Brand"/>
+                                <field name="x_brand_id" string="Brand"/>
                             </div>
                             <div class="o_kanban_name">
                                 <field name="name"/>
