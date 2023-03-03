@@ -3,7 +3,7 @@
         <record model="ir.ui.menu" id="menu_my_brand">
             <field name="name">Brands</field>
             <field name="sequence" eval="30"/>
-            <field name="web_icon"/mgp_template_pdf,static/src/img/brand_icon.png</field>
+            <field name="web_icon">/mgp_template_pdf,static/src/img/brand_icon.png</field>
         </record>
         <record model="ir.ui.menu" id="menu_my_brand_list">
             <field name="name">Brand List</field>
