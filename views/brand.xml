@@ -61,10 +61,10 @@
     </field>
 </record>
 
-        <!-- AJOUTER XBRAND A LA RECHERCHE VUE LISTE -->
+        
 
 
-        <record id="product_template_search_custom" model="ir.ui.view">
+<!--         <record id="product_template_search_custom" model="ir.ui.view">
     <field name="name">product.template.search.custom</field>
     <field name="model">product.template</field>
     <field name="inherit_id" ref="product.product_template_search_view"/>
@@ -75,7 +75,7 @@
     </field>
         </record>
 
-        <!-- AJOUTER XBRAND A LA RECHERCHE VUE KANBAN -->
+        
 
         <record id="product_template_kanban_custom" model="ir.ui.view">
     <field name="name">product.template.kanban.custom</field>
@@ -86,7 +86,38 @@
             <field name="x_brand_id" string="Marque"/>
         </xpath>
     </field>
-</record>
+</record> -->
+
+        <!-- AJOUTER XBRAND A LA RECHERCHE VUE LISTE -->
+
+        <record id="product_template_search_custom" model="ir.ui.view">
+    <field name="name">product.template.search.custom</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_search_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//filter[@string='Type']" position="after">
+            <filter string="Brand" name="filter_brand" domain="[]" context="{'group_by': 'x_brand_id'}"/>
+        </xpath>
+        <xpath expr="//search" position="inside">
+            <filter string="Brand" name="x_brand_id" domain="[]" context="{'group_by': 'x_brand_id'}" help="Search by brand"/>
+        </xpath>
+    </field>
+        </record>
+
+        
+        <!-- AJOUTER XBRAND A LA RECHERCHE VUE KANBAN -->
+
+        <record id="product_template_kanban_custom" model="ir.ui.view">
+    <field name="name">product.template.kanban.custom</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_kanban_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//templates/t/div[2]/ul/li[2]/field[@name='type']" position="after">
+            <field name="x_brand_id" class="oe_kanban_content oe_inline"/>
+        </xpath>
+    </field>
+        </record>
+
 
 
 

@@ -53,3 +53,8 @@ class ProductTemplate(models.Model):
     @api.model
     def _group_expand_brand(self, brands, order):
         return self.env['my_brand.brand'].search([], order=order)
+
+
+    def _search_x_brand_id(self, operator, value):
+        product_ids = self.search([('x_brand_id', operator, value)]).ids
+        return [('id', 'in', product_ids)]
