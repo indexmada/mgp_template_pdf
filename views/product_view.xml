@@ -10,7 +10,7 @@
                     <field name="product_id"/>
                     <field name="location_id"/>
                     <field name="quantity"/>
-                    <field name="x_brand"/>
+                    <field name="x_brand_id"/>
                 </tree>
             </field>
         </record>
@@ -40,13 +40,14 @@
         <xpath expr="//tree" position="attributes">
             <attribute name="groups">product.group_uom,product.group_stock_packaging,my_brand.group_by_brand</attribute>
         </xpath>
-        <xpath expr="//group[@name='product_template_uom_group']" position="after">
+        <xpath expr="//group[@name='product_template_price']" position="after">
             <group string="Brand" name="my_brand.group_by_brand">
                 <field name="x_brand_id" groups="my_brand.group_by_brand"/>
             </group>
         </xpath>
     </field>
 </record>
+
 
 <record id="my_brand_group_by_brand" model="ir.actions.act_window">
     <field name="name">Products by Brand</field>
@@ -79,7 +80,7 @@
                 <xpath expr="//div[@class='o_kanban_record_content']" position="inside">
                     <div class="o_kanban_bottom_right">
                         <div class="o_kanban_tags">
-                            <field name="x_brand"/>
+                            <field name="x_brand_id"/>
                         </div>
                     </div>
                 </xpath>
