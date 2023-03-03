@@ -48,7 +48,7 @@
                         </div>
                         <div class="o_kanban_details">
                             <div class="o_kanban_brand_id">
-                                <field name="brand_id" string="Brand"/>
+                                <field name="x_brand" string="Brand"/>
                             </div>
                             <div class="o_kanban_name">
                                 <field name="name"/>
