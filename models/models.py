@@ -38,7 +38,7 @@ class ResPartner(models.Model):
 class StockQuant(models.Model):
     _inherit = 'stock.quant'
     
-    x_brand = fields.Char(string='Marque')
+    x_brand_id = fields.Char(string='Marque')
 
 
 #--------HERITAGE DU MODELE PRODUCT TEMPLATE ICI------------------------ #
