@@ -35,7 +35,7 @@
 
         <!-- Afficher à la vue KANBAN de PRODUCT TEMPLATE brand dans search view -->
 
-<record id="product_template_kanban_view_custom" model="ir.ui.view">
+<!-- <record id="product_template_kanban_view_custom" model="ir.ui.view">
     <field name="name">product.template.kanban.view.custom</field>
     <field name="model">product.template</field>
     <field name="arch" type="xml">
@@ -59,7 +59,7 @@
             </templates>
         </kanban>
     </field>
-</record>
+</record> -->
 
         
 
@@ -117,9 +117,6 @@
         </xpath>
     </field>
         </record>
-
-
-
 
 
 
