@@ -12,6 +12,7 @@
         'views/sale_order_view.xml',
         'views/res_company.xml',
         'views/res_partner_views.xml',
+        'views/product_view.xml',
         #'views/purchase_views.xml',
         #'static/src/js/purchase.js',
     ],
