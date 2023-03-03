@@ -45,7 +45,7 @@ class StockQuant(models.Model):
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    x_brand = fields.Many2one('my_brand.brand', string='Marque')
+    #x_brand = fields.Many2one('my_brand.brand', string='Marque')
     x_brand_id = fields.Many2one('my_brand.brand', string='Marque', index=True, group_expand='_group_expand_brand')
 
     
