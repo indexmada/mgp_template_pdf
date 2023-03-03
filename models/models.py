@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import api, fields, models
+
 
 # LA GESTION DE BRAND #
 class MyBrand(models.Model):
