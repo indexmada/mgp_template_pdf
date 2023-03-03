@@ -95,14 +95,15 @@
     <field name="model">product.template</field>
     <field name="inherit_id" ref="product.product_template_search_view"/>
     <field name="arch" type="xml">
-        <xpath expr="//filter[@name='Type']" position="after">
-            <filter string="Marque" name="filter_brand" domain="[]" context="{'group_by': 'x_brand_id'}"/>
-        </xpath>
         <xpath expr="//search" position="inside">
-            <filter string="Marque" name="x_brand_id" domain="[]" context="{'group_by': 'x_brand_id'}" help="Search by brand"/>
+            <filter string="Brand" name="x_brand_id" domain="[]" context="{'group_by': 'x_brand_id'}" help="Search by brand"/>
+        </xpath>
+        <xpath expr="//filter[@name='Type']" position="after">
+            <filter string="Brand" name="filter_brand" domain="[]" context="{'group_by': 'x_brand_id'}"/>
         </xpath>
     </field>
-            </record>
+</record>
+
 
 
             <!-- AJOUTER XBRAND A LA RECHERCHE VUE KANBAN -->
@@ -116,7 +117,8 @@
             <field name="x_brand_id" class="oe_kanban_content oe_inline"/>
         </xpath>
     </field>
-            </record>
+</record>
+
 
 
     </data>
