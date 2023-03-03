@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Ajouter Brand dans Stock quant -->
         <record model="ir.ui.view" id="stock_quant_tree_custom">
             <field name="name">stock.quant.tree.custom</field>
             <field name="model">stock.quant</field>
@@ -13,5 +14,24 @@
                 </tree>
             </field>
         </record>
+
+        <!-- Ajouter Brand dans produit -->
+        <record model="ir.ui.view" id="[id_de_votre_vue]">
+            <field name="name">product.template.form.custom</field>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="default_code"/>
+                            <field name="categ_id"/>
+                            <field name="x_brand"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
     </data>
 </odoo>
