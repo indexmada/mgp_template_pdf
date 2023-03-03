@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- Inherit purchase.order form view -->
+        <record model="ir.ui.view" id="view_purchase_order_form_inherit">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+                <!-- Move delivered_to field below partner_ref field -->
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="picking_type_id" readonly="0"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
