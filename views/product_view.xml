@@ -22,7 +22,7 @@
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='type']" position="before">
-                    <field name="x_brand" widget="selection"/>
+                    <field name="x_brand_id" widget="selection"/>
                 </xpath>
                 <xpath expr="//field[@name='x_brand']" position="attributes">
                     <attribute name="domain">[('active', '=', True)]</attribute>

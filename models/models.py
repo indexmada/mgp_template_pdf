@@ -40,8 +40,11 @@ class StockQuant(models.Model):
     x_brand = fields.Char(string='Brand')
 
 
-
+#--------HERITAGE DU MODELE PRODUCT TEMPLATE ICI------------------------ #
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
     x_brand = fields.Char(string='Brand')
+    x_brand_id = fields.Many2one('my_brand.brand', string='Brand')
+
+    
