@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-       
-
-
-
        <record id="view_brand_list_editable" model="ir.ui.view">
     <field name="name">Brand List Editable</field>
     <field name="model">my_brand.brand</field>
