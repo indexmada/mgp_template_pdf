@@ -29,19 +29,22 @@
 
         <!-- FONCTION GROUP BY BRAND -->
 
-        <record id="product_template_tree_view_inherit" model="ir.ui.view">
-            <field name="name">product.template.tree.inherit</field>
+<record id="product_template_tree_custom" model="ir.ui.view">
+            <field name="name">product.template.tree.custom</field>
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_tree_view"/>
             <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                    <field name="x_brand" groups="product.group_product_manager"/>
-                    <field name="type"/>
-                    <field name="list_price"/>
-                    <field name="standard_price"/>
-                    <field name="categ_id"/>
-                </tree>
+                <xpath expr="//field[@name='product_variant_count']" position="after">
+                    <field name="x_brand_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="groups">product.group_uom,product.group_stock_packaging,my_brand.group_by_brand</attribute>
+                </xpath>
+                <xpath expr="//group[@name='product_template_uom_group']" position="after">
+                    <group string="Brand" name="my_brand.group_by_brand">
+                        <field name="x_brand_id" groups="my_brand.group_by_brand"/>
+                    </group>
+                </xpath>
             </field>
         </record>
 
