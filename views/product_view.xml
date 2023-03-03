@@ -16,7 +16,7 @@
         </record>
 
         <!-- Ajouter Brand dans produit -->
-        <record model="ir.ui.view" id="product.template.form.custom">
+        <record model="ir.ui.view" id="view.product.template.form.custom">
             <field name="name">product.template.form.custom</field>
             <field name="model">product.template</field>
             <field name="arch" type="xml">
