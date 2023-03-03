@@ -47,4 +47,10 @@ class ProductTemplate(models.Model):
     x_brand = fields.Char(string='Brand')
     x_brand_id = fields.Many2one('my_brand.brand', string='Brand')
 
+    x_brand = fields.Many2one('my_brand.brand', string='Brand', index=True, group_expand='_group_expand_brand')
+
+    @api.model
+    def _group_expand_brand(self, brands, order):
+        return self.env['my_brand.brand'].search([], order=order)
+
     

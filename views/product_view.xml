@@ -27,5 +27,23 @@
             </field>
         </record>
 
+        <!-- FONCTION GROUP BY BRAND -->
+
+        <record id="product_template_tree_view_inherit" model="ir.ui.view">
+            <field name="name">product.template.tree.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="x_brand" groups="product.group_product_manager"/>
+                    <field name="type"/>
+                    <field name="list_price"/>
+                    <field name="standard_price"/>
+                    <field name="categ_id"/>
+                </tree>
+            </field>
+        </record>
+
     </data>
 </odoo>
