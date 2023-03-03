@@ -1,5 +1,18 @@
 from odoo import models, fields
 
+# LA GESTION DE BRAND #
+class MyBrand(models.Model):
+    _name = 'my_brand.brand'
+    _description = 'My Brand'
+
+    name = fields.Char(string='Brand Name', required=True)
+    description = fields.Text(string='Description')
+    logo = fields.Binary(string='Logo')
+
+#------------FIN gestion de BRAND---------------------#
+
+
+
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 

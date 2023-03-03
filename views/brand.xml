@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       
+
+
+
+       <record id="view_brand_list_editable" model="ir.ui.view">
+    <field name="name">Brand List Editable</field>
+    <field name="model">my_brand.brand</field>
+    <field name="arch" type="xml">
+        <tree editable="top">
+            <field name="name"/>
+            <field name="description"/>
+        </tree>
+    </field>
+        </record>
+
+        <record id="view_brand_tree" model="ir.ui.view">
+            <field name="name">Brand Tree</field>
+            <field name="model">my_brand.brand</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_brand" model="ir.actions.act_window">
+            <field name="name">Brands</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">my_brand.brand</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Afficher à la vue KANBAN brand dans search view -->
+
+<record id="product_template_kanban_view_custom" model="ir.ui.view">
+    <field name="name">product.template.kanban.view.custom</field>
+    <field name="model">product.template</field>
+    <field name="arch" type="xml">
+        <kanban class="o_product_kanban">
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click o_res_model_icon o_kanban_record">
+                        <div class="o_kanban_image">
+                            <img t-att-src="kanban_image('product.template', 'image_medium', record)" class="img img-fluid" />
+                        </div>
+                        <div class="o_kanban_details">
+                            <div class="o_kanban_brand_id">
+                                <field name="brand_id" string="Brand"/>
+                            </div>
+                            <div class="o_kanban_name">
+                                <field name="name"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+
+
+
+    </data>
+</odoo>

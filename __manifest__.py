@@ -9,10 +9,13 @@
     'depends': ['sale_management'],
     'data': [
         #'reports/sale_report_template.xml',
+        'security/ir.model.access.csv',
         'views/sale_order_view.xml',
         'views/res_company.xml',
         'views/res_partner_views.xml',
         'views/product_view.xml',
+        'views/brand.xml',
+        'views/menu.xml',
         #'views/purchase_views.xml',
         #'static/src/js/purchase.js',
     ],

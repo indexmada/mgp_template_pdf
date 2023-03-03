@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_brand_manager,Brand Manager,model_my_brand_brand,base.group_user,1,1,1,0
+access_brand_user,Brand User,model_my_brand_brand,,1,1,0,0
