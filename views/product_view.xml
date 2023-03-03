@@ -48,6 +48,26 @@
     </field>
 </record>
 
+<record id="my_brand_group_by_brand" model="ir.actions.act_window">
+    <field name="name">Products by Brand</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">product.template</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="product.product_template_search_view"/>
+    <field name="context">{'search_default_group_by_brand': 1}</field>
+    <field name="domain">[('x_brand_id', '!=', False)]</field>
+</record>
+
+<record id="my_brand_group_by_brand_action" model="ir.values">
+    <field name="name">Products by Brand</field>
+    <field name="model">ir.actions.act_window</field>
+    <field name="key2">tree_but_brand</field>
+    <field name="value" eval="'ir.actions.act_window,' + str(ref('my_brand_group_by_brand'))"/>
+    <field name="group" eval="[(4,ref('product.group_uom')), (4,ref('my_brand.group_by_brand'))]"/>
+    <field name="menuitem_id" ref="product.product_template_menu"/>
+</record>
+
+
 
 
         <!-- Ajouter Brand dans la vue kanban de product.template -->
